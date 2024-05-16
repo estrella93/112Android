@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 TextView output =(TextView) findViewById(R.id.lblOutput);
                 output.setText("主餐:"+ course + "\n甜點:"+dessert);
             }
-        });
+            });
+        Button btnModify = (Button) findViewById(R.id.btnModify);
+        btnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                desserts[4] = "草莓蛋糕";
+                adpDesserts.notifyDataSetChanged();
+            }
+    });
     }
 }

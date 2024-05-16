@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,14 +25,16 @@ public class MainActivity extends AppCompatActivity {
         cities=getResources().getStringArray(R.array.cities);
         lv =(ListView) findViewById(R.id.listview);
 
-        ArrayAdapter<String> adpcities =new ArrayAdapter<>(this,
+        /*ArrayAdapter<String> adpcities =new ArrayAdapter<>(this,
                 android.R.layout.simple_selectable_list_item,cities);
-        spCities.setAdapter(adpcities);
+        spCities.setAdapter(adpcities);*/
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView output =(TextView) findViewById(R.id.lblOutput);
                 output.setText("你是住在:"+cities[position]);
+                Toast.makeText(MainActivity.this,"你是住在:"+cities[position],
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
