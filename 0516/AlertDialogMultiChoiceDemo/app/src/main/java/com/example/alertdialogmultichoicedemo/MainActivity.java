@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity
 
     private String[] items = {"Samsung","OPPO","Apple","ASUS"};
 
-    private boolean[] itemsChecked = new boolean[false,true,false,true];
+    private boolean[] itemsChecked = {false,true,false,true};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,5 +57,4 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-}
 }
